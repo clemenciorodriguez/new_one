@@ -52,7 +52,7 @@ app.post("/form", upload.array("image", 12), (req, res) => {
   const { name, email, details, latitude, longitude } = req.body;
 
   // Preparar la información de las imágenes para almacenarlas en la base de datos
-  const image_url = req.files.map(file => "C:/Nodejs65/static/photos/" + file.filename);
+  const image_url = req.files.map(file => "http://localhost/static/photos/" + file.filename);
   
 
   // Crear una consulta SQL para insertar los datos en la tabla
