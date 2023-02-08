@@ -37,7 +37,7 @@ connection.connect(() => {
 // Configurar Multer para la subida de archivos
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
-    cb(null, "C:/Nodejs65/static/photos");
+    cb(null, "http:/localhost/static/photos");
   },
   filename: function(req, file, cb) {
     cb(null, file.fieldname + "-" + Date.now());
