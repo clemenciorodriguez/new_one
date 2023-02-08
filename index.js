@@ -3,7 +3,8 @@ const cors = require("./cors")
 const express = require("express");
 const multer = require("multer");
 const mysql = require("./mysql2");
-const path = require("path")
+const path = require("path");
+
 // Inicializar Express
 
 const app = express()
@@ -90,6 +91,19 @@ app.get("/users", (req, res) => {
       res.send({ data });
     }
   });
+});
+
+
+
+app.get("/", (req, res) => {
+
+      url = "https://lodged-shield.000webhostapp.com/index.html";
+      const formPost = ` <div><h1> Go to <a href=" ${url} ">this form<a> to make server request at the endpoints</h1> </div>`
+      
+      
+      
+      res.send(formPost);
+    
 });
 
 
