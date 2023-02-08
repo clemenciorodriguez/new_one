@@ -3,7 +3,7 @@ const cors = require("./cors")
 const express = require("express");
 const multer = require("multer");
 const mysql = require("./mysql2");
-
+const path = require("path")
 // Inicializar Express
 
 const app = express()
@@ -37,7 +37,7 @@ connection.connect(() => {
 // Configurar Multer para la subida de archivos
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
-    cb(null, "https://new-one-htxa.onrender.com/static/photos");
+    cb(null, __dirname );
   },
   filename: function(req, file, cb) {
     cb(null, file.fieldname + "-" + Date.now());
